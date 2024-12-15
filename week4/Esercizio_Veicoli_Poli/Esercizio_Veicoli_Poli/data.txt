@@ -1,0 +1,5 @@
+a;Fiat;Panda;Giallo;2005;5;S;S
+m;Kawasaki;Ninja;Verde;2019;S;1;S
+p;Abarth;595;Bianca;2020;3;S;N
+a;Fiat;Ritmo;Nero;1995;3;N;S
+m;Ducati;Panigale;Rosso;2023;S;3;S

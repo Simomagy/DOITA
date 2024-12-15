@@ -1,0 +1,9 @@
+﻿1;Libro;King;IT;Horror;18,90;1999;1235
+2;Libro;King;Cujo;Horror;9,90;1997;350
+3;Libro;Rowling;Harry Potter 1;Fantasy;8,90;1997;300
+4;Film;Cameron;Titanic;Drammatico;9,90;2005;180
+5;Film;Bho;Countdown;Horror;10,10;2022;120
+6;Film;Bho;Un Matrimonio Esplosivo;Commedia;8,90;2022;110
+7;CD;J-AX;Immorale;Rap;9,90;2005;10
+8;CD;J-AX;Il Bello di Esser Brutti;Rap;10;2012;10
+9;CD;Adam Jensen;Street Fight;Rock;5;2020;1

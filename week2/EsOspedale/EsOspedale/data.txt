@@ -1,0 +1,6 @@
+Pino;Pane;13-09-1978;Febbre;Medicina Generale
+Alba;Chiara;25-11-1967;Febbre Gialla;Medicina Generale
+Gino;Ginetti;31-12-1956;Frattura;Ortopedia
+Bilbo;Beggins;02-09-1900;Zombiefication;Malattie Infettive
+Sauron;Evil;09-04-1900;Zombiefication;Malattie Infettive
+Pippo;Baudo;05-08-1989;Aviaria;Malattie Infettive

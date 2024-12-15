@@ -1,0 +1,80 @@
+calciatore,Giorgio,Chiellini,37,3,difensore,Juventus
+calciatore,Cristiano,Ronaldo,37,7,attaccante,Manchester United
+calciatore,Lorenzo,Insigne,30,24,attaccante,Napoli
+calciatore,Gianluigi,Donnarumma,22,50,portiere,Paris Saint-Germain
+calciatore,Nicolo,Barella,24,23,centrocampista,Inter
+calciatore,Robert,Lewandowski,33,9,attaccante,Bayern Monaco
+calciatore,N'Golo,Kanté,30,7,centrocampista,Chelsea
+calciatore,Joshua,Kimmich,26,6,centrocampista,Bayern Monaco
+calciatore,Harry,Kane,28,10,attaccante,Tottenham
+calciatore,Sadio,Mané,29,10,attaccante,Liverpool
+calciatore,Kylian,Mbappé,23,7,attaccante,Paris Saint-Germain
+calciatore,Marcus,Rashford,24,10,attaccante,Manchester United
+calciatore,Paulo,Dybala,28,10,attaccante,Juventus
+calciatore,Luka,Modrić,36,10,centrocampista,Real Madrid
+calciatore,Jorginho, ,30,8,centrocampista,Chelsea
+tennista,Novak,Djokovic,34,Lacoste,true
+tennista,Rafael,Nadal,36,Nike,false
+tennista,Roger,Federer,40,Uniqlo,true
+tennista,Naomi,Osaka,24,Adidas,false
+tennista,Ashleigh,Barty,25,Fila,false
+tennista,Daniil,Medvedev,25,Lotto,true
+tennista,Aryna,Sabalenka,23,Wilson,false
+tennista,Stefanos,Tsitsipas,23,Rolex,true
+tennista,Simona,Halep,30,Nike,false
+tennista,Iga,Swiatek,20,Asics,true
+nuotatore,Caeleb,Dressel,33,stile libero
+nuotatore,Katie,Ledecky,33,stile libero
+nuotatore,Adam,Peaty,35,rana
+nuotatore,Lilly,King,24,rana
+nuotatore,Ryan,Murphy,27,dorso
+nuotatore,Simone,Manuel,19,stile libero
+nuotatore,Ariarne,Titmus,26,stile libero
+nuotatore,Michael,Andrew,38,stile libero
+nuotatore,Sarah,Sjöström,49,stile libero
+nuotatore,Kristóf,Milák,29,dorso
+nuotatore,Arno,Kamminga,18,rana
+nuotatore,Anastasiya,Shkurdai,22,dorso
+nuotatore,Gregorio,Paltrinieri,25,stile libero
+nuotatore,Kristian,Gkolomeev,28,farfalla
+nuotatore,Margherita,Panziera,24,dorso
+pugile,Muhammad,Ali,74,103
+pugile,Mike,Tyson,55,100
+pugile,Floyd,Mayweather,45,68
+pugile,Anthony,Joshua,32,113
+pugile,Sugar Ray,Leonard,65,72
+pugile,Evander,Holyfield,59,100
+pugile,Oscar,De La Hoya,49,66
+pugile,George,Foreman,72,118
+pugile,Lennox,Lewis,56,116
+pugile,Manny,Pacquiao,43,62
+pugile,Marvelous,Marvin Hagler,67,75
+pugile,Joe,Frazier,67,104
+pugile,Roberto,Duran,71,72
+pugile,Tommy,Hearns,63,78
+pugile,Vasyl,Lomachenko,34,60
+pilota,Lewis,Hamilton,37,F1,Mercedes
+pilota,Ayrton,Senna,27,F1,McLaren
+pilota,Valentino,Rossi,43,moto,Yamaha
+pilota,Marc,Márquez,29,moto,Honda
+pilota,Kimi,Räikkönen,43,F1,Alfa Romeo
+pilota,Sebastian,Vettel,34,F1,Aston Martin
+pilota,Max,Verstappen,24,F1,Red Bull
+pilota,Dani,Pedrosa,36,moto,Honda
+pilota,Tony,Cairoli,36,moto,KTM
+pilota,Fernando,Alonso,40,F1,Alpine
+pilota,Jeff,Gordon,50,nascar,Hendrick Motorsports
+pilota,Romain,Grosjean,35,IndyCar,Dale Coyne Racing with Rick Ware Racing
+pilota,Guy,Martin,40,Isle of Man TT,Suzuki
+pilota,Mario,Andretti,82,IndyCar,Nazareth Racing
+pilota,Mika,Häkkinen,53,F1,McLaren
+pilota,Charles,Leclerc,24,F1,Ferrari
+pilota,Riccardo,Patrese,68,F1,Williams
+pilota,Marco,Simoncelli,25,moto,Honda Gresini
+pilota,Andrea,Dovizioso,36,moto,Ducati
+pilota,John,McGuinness,49,Isle of Man TT,Kawasaki
+pilota,Jamie,Chadwick,23,W Series,Veloce Racing
+pilota,Jack,Miller,27,moto,Ducati
+pilota,Michael,Schumacher,53,F1,Ferrari
+pilota,Carlos,Sainz Jr.,27,F1,Ferrari
+pilota,Nico,Rosberg,36,F1,Mercedes

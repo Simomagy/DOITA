@@ -1,0 +1,16 @@
+dvd;Inception;Christopher Nolan;Fantascienza;120;NO
+cd;The Dark Side of the Moon;Pink Floyd;Rock;10;4
+dvd;La vita è bella;Roberto Benigni;Commedia;60;S
+cd;Thriller;Michael Jackson;Pop;9;5
+dvd;Il Gladiatore;Ridley Scott;Drammatico;120;S
+cd;Abbey Road;The Beatles;Rock;17;3
+cd;Back in Black;AC/DC;Rock;10;4
+dvd;Fight Club;David Fincher;Drammatico;120;S
+cd;OK Computer;Radiohead;Alternative;12;4
+dvd;Pulp Fiction;Quentin Tarantino;Crime;120;S
+cd;Thriller 2;Michael Jackson;Pop;9;5
+cd;Back in Black 2;AC/DC;Rock;12;4
+dvd;Il Padrino;Francis Ford Coppola;Drammatico;120;S
+cd;Rumours;Fleetwood Mac;Rock;11;4
+dvd;Il Signore degli Anelli: La Compagnia dell'Anello;Peter Jackson;Fantasy;180;NO
+dvd;Interstellar;Christopher Nolan;Fantascienza;180;NO

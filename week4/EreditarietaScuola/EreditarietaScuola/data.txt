@@ -1,0 +1,6 @@
+s;Tizio;Caio;23-09-2009;1C;8-9-8-10
+s;Sempre;Verde;09-12-2006;4A;10-7-5-8
+s;Luna;Chiara;09-03-2003;5A;5-6-6-6
+d;Alba;Chiara;04-09-1967;Italiano;S
+d;Fiona;Verdi;25-07-1968;Matematica;N
+s;Giorgio;Pane;24-10-2006;4A;9-5-5-7

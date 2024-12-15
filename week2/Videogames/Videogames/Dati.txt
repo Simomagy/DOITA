@@ -1,0 +1,23 @@
+﻿Final Fantasy X;PlayStation 2;12-11-2001;Squaresoft;87;95;RPG
+Nier: Automata;PlayStation 3;09-10-2017;PlatinumGames;91;86;Action RPG
+The Last of Us Part I;PlayStation 5;21-07-2022;Naughty Dog;98;88;Survival
+The Last of Us Part II;PlayStation 4;15-12-2020;Naughty Dog;92;95;Survival
+Journey;PlayStation 3;06-09-2012;Thatgamecompany;86;94;Exploration
+Batman: Return to Arkham;PlayStation 4;27-03-2016;RockSteady Studios;81;77;Action/Adventure
+Horizon: Forbidden West;PlayStation 4;29-10-2022;Guerrilla Games;88;92;Action/Adventure
+Horizon Zero Dawn;PlayStation 4;09-10-2017;Guerrilla Games;89;89;Action/Adventure
+The Legend of Zelda: Breath of the Wild;Switch;25-12-2017;Nintendo EPD;92;98;Action/Adventure
+Super Mario Odyssey;Switch;13-09-2017;Nintendo EPD;90;97;Platform
+Batman: Arkham Knight;PlayStation 4;05-05-2015;RockSteady Studios;85;92;Action/Adventure
+Elden Ring;Xbox Series X|S;24-10-2022;FromSoftware;95;97;Action RPG
+Bloodborne;PlayStation 4;23-11-2015;FromSoftware;92;91;Action RPG
+Forza Horizon 4;Xbox One;14-07-2018;Playground Studio;82;91;Racing
+Gran Turismo 7;PlayStion 5;08-02-2022;Polyphony Digital;80;87;Raging
+Mass Effect;Xbox 360;01-01-2007;BioWare;86;89;Action RPG
+The Legend of Zelda: Tears of the Kingdom;Switch;23-12-2023;Nintendo EPD;98;95;Action/Adventure
+Final Fantasy XVI;PlayStation 5;01-01-2023;Square Enix;88;92;Action RPG
+Alan Wake;Xbox 360;10-10-2010;Remedy Entertainment;82;83;Survival
+Control;Xbox One;09-12-2019;Remedy Entertainment;84;83;Action/Adventure
+Uncharted 4: A Thief's End;PlayStation 4;30-09-2016;Naughty Dog;91;93;Action/Adventure
+Cyberpunk 2077; Xbox Series X;12-20-2020;CD Projekt Red;84;75;Action/Adventure
+Monster Hunter World;PlayStation 4;01-26-2018;Bandai Namco;90;78;Action RPG

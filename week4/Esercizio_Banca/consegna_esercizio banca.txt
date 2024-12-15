@@ -1,0 +1,178 @@
+Creare un nuovo file denominato BankAccount.cs nella directory classi.
+Questo file conterrà la definizione di un conto bancario. Nella programmazione
+orientata a oggetti il codice viene organizzato tramite la creazione di tipi sotto forma di
+classi. Queste classi contengono il codice che rappresenta un'entità specifica. La classe
+BankAccount rappresenta un conto bancario. Il codice implementa operazioni specifiche.
+Creare l'applicazione tramite metodi e proprietà. Il conto bancario supporta questo
+comportamento:
+1. Esiste un numero di 10 cifre che identifica in modo univoco il conto.
+2. Esiste una stringa in cui vengono archiviati i nomi dei titolari.
+3. È possibile recuperare il saldo.
+4. Il conto accetta versamenti.
+5. Il conto accetta prelievi.
+6. Il saldo iniziale deve essere positivo.
+7. I prelievi non possono risultare in un saldo negativo.
+
+Passaggio 1: Definire il tipo di conto bancario
+string Number { get; }
+string Owner { get; set; }
+decimal Balance { get; }
+
+ public void MakeDeposit(decimal amount, DateTime date, string note)
+ {
+ }
+ public void MakeWithdrawal(decimal amount, DateTime date, string note)
+ {
+ }
+
+- domande da porsi -> cos'è una classe?, cosa sono i campi?cosa sono i metodi?
+
+Passaggio 2: La prima funzionalità da implementare è l'apertura di un conto bancario. Quando un
+cliente apre un conto, deve specificare il saldo iniziale e informazioni sul titolare o i
+titolari del conto.
+La creazione di un nuovo oggetto di tipo BankAccount implica la definizione di un
+costruttore che assegna questi valori.
+
+- cos'è un costruttore?
+
+Il codice della classe BankAccount deve sapere come assegnare nuovi numeri di conto. Un modo semplice
+consiste nell'iniziare con un numero di 10 cifre. e incrementarlo per la creazione di ogni
+nuovo conto. Infine, il numero di conto corrente deve essere archiviato quando viene
+costruito un oggetto -> in che modo?All'inizio tutti gli oggetti dovranno condividere quel valore
+accountNumberSeed -> È
+anche static , ovvero è condiviso tra tutti gli oggetti BankAccount . Il valore di una
+variabile non statica è univoco per ogni istanza dell'oggetto BankAccount .
+accountNumberSeed è un campo private static e quindi ha il prefisso s_ in base alle
+convenzioni di denominazione C#. s denota static mentre _ denota il campo
+private.
+Aggiungere le due righe seguenti al costruttore per assegnare il numero di
+conto:
+Number = s_accountNumberSeed.ToString();
+s_accountNumberSeed++;
+
+Passaggio 3: Creare versamenti e prelievi
+
+La classe del conto bancario deve accettare versamenti e prelievi per funzionare
+correttamente. I versamenti e i prelievi vengono implementati tramite la creazione di un
+registro di ogni transazione per il conto. Il rilevamento di ogni transazione presenta
+alcuni vantaggi rispetto all'aggiornamento del saldo su ogni transazione. È possibile
+usare la cronologia per controllare tutte le transazioni e gestire i saldi giornalieri. Grazie
+alla possibilità di calcolare il saldo dalla cronologia di tutte le transazioni all'occorrenza,
+eventuali errori in una singola transazione risolti saranno rispecchiati correttamente nel
+saldo dopo il calcolo successivo.
+Per iniziare, occorre creare un nuovo tipo per rappresentare una transazione. Si tratta di
+un tipo di transazione semplice senza responsabilità. che richiede alcune proprietà.
+Creare un nuovo file denominato Transaction.cs.
+
+decimal Amount { get; }
+DateTime Date { get; }
+string Notes { get; }
+Transaction(decimal amount, DateTime date, string note)
+ {
+ Amount = amount;
+ Date = date;
+ Notes = note;
+ }
+
+A questo punto, aggiungere una lista di oggetti Transaction alla classe BankAccount.
+
+A questo punto, è possibile calcolare correttamente Balance . Il saldo attuale è
+disponibile sommando i valori di tutte le transazioni. Poiché il codice è attuale, è possibile 
+ottenere solo il saldo iniziale dell'account, quindi sarà necessario aggiornare la
+proprietà Balance.
+-> aggiornare il get
+
+Aspetto importante delle proprietà. Il saldo viene ora
+calcolato quando un altro programmatore richiede il valore. Il calcolo enumera tutte le
+transazioni e fornisce la somma come saldo corrente.
+
+Implementare ora i metodi MakeDeposit e MakeWithdrawal . Questi metodi applicheranno
+le due regole finali, ovvero il saldo iniziale deve essere positivo e qualsiasi prelievo non
+può risultare in un saldo negativo.
+
+Verificare poi che le condizioni di errore vengano intercettate, tentando di creare un
+conto con saldo negativo.
+Il costruttore deve ottenere una modifica in modo da aggiungere una transazione
+iniziale, invece di aggiornare direttamente il saldo.
+
+Scrivere il metodo GetAccountHistory ,
+che crea un oggetto string per la cronologia delle transazioni. Aggiungere questo
+metodo al tipo BankAccount
+
+-------------------------------------------------
+Creare diversi tipi di account
+
+Dopo aver compilato questo programma, si ricevono richieste di aggiunta di
+funzionalità. Funziona bene nella situazione in cui c'è un solo tipo di conto bancario. Nel
+corso del tempo, vengono richiesti i tipi di conto correlati e le esigenze:
+Un conto degli utili di interesse che accumula interessi alla fine di ogni mese.
+Una linea di credito che può avere un saldo negativo, ma, quando è presente un
+saldo, è presente un addebito di interesse ogni mese.
+Un conto carta regalo con pagamento anticipato che inizia con un solo deposito e
+può essere estinto. Può essere ricaricato una volta all'inizio di ogni mese.
+
+Tutti questi account diversi sono simili alla classe BankAccount.
+e. I
+requisiti per le nuove classi possono essere indicati come segue:
+- Conto degli utili di interesse:
+Otterrà un credito del 2% del saldo di fine mese.
+- Una linea di credito:
+Può avere un saldo negativo, ma non essere maggiore in valore assoluto
+rispetto al limite di credito.
+Se il saldo di fine mese non è pari a 0, ogni mese verrà addebitato un interesse.
+Verrà addebitata una commissione per ogni prelievo che supera il limite di
+credito.
+- Un conto carta regalo:
+Può essere ricaricato con un importo specificato una volta al mese, l'ultimo
+giorno del mese.
+
+È possibile notare che tutti e tre questi tipi di conto hanno un'azione che viene eseguita
+alla fine di ogni mese. Tuttavia, ogni tipo di conto esegue attività diverse. Usare il
+polimorfismo per implementare questo codice. Creare un singolo metodo virtual nella
+classe BankAccount
+
+-> public virtual void PerformMonthEndTransactions();
+
+Implementarlo nelle classi figlie a seconda dei requisiti indicati.
+
+Attenzione!
+BankAccount presuppone che il saldo iniziale sia maggiore di 0. Un altro presupposto inserito nella classe BankAccount è che il saldo non
+può andare in negativo. Invece, qualsiasi prelievo che mandi in rosso il conto viene
+rifiutato. Entrambi questi presupposti devono cambiare. La riga di conto di credito inizia
+a 0 e in genere avrà un saldo negativo. Inoltre, se un cliente prende in prestito troppo
+denaro, viene addebitata una commissione. La transazione viene accettata, costa solo di
+più. La prima regola può essere implementata aggiungendo un argomento facoltativo al
+costruttore BankAccount che specifica il saldo minimo. Il valore predefinito è 0 . La
+seconda regola richiede un meccanismo che consente alle classi derivate di modificare
+l'algoritmo predefinito. In un certo senso, la classe base "chiede" al tipo derivato cosa
+dovrebbe accadere quando c’è uno scoperto. Il comportamento predefinito consiste nel
+rifiutare la transazione generando un'eccezione.
+Si inizierà aggiungendo un secondo costruttore che include un parametro
+minimumBalance facoltativo. Questo nuovo costruttore esegue tutte le azioni eseguite dal
+costruttore esistente. Imposta inoltre la proprietà di saldo minimo. È possibile copiare il
+corpo del costruttore esistente, ma ciò significa che ci saranno due posizioni da
+cambiare in futuro.
+
+In primo luogo, il campo minimumBalance viene contrassegnato come readonly . Ciò significa che il valore non può
+essere modificato dopo la costruzione dell'oggetto. Dopo aver creato un oggetto
+BankAccount , l'oggetto minimumBalance non può cambiare. In secondo luogo, il
+costruttore che accetta due parametri usa : this(name, initialBalance, 0) { } come
+implementazione. L'espressione : this() chiama l'altro costruttore, quello con tre
+parametri. Questa tecnica consente di avere una singola implementazione per
+l'inizializzazione di un oggetto anche se il codice client può scegliere uno dei molti
+costruttori.
+Questa implementazione chiama MakeDeposit solo se il saldo iniziale è maggiore di 0 .
+Ciò mantiene la regola che i depositi devono essere positivi, ma consente l'apertura del
+conto di credito con un saldo 0 .
+
+Dopo aver esteso la classe BankAccount , è possibile modificare il costruttore
+LineOfCreditAccount per chiamare il nuovo costruttore di base.
+
+
+Creare un aggregatore Banca che permetta la gestione di conti bancari definiti.
+Creare unìinterfaccia IBank che permetta ad ogni cliente di poter visualizzare:
+- i dati del suo conto
+- il suo saldo
+- i suoi movimenti
+- versare 
+- prelevare
