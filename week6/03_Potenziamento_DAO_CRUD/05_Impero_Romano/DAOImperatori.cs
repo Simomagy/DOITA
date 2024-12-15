@@ -15,6 +15,10 @@ namespace _05_Impero_Romano
             return instance ??= new DAOImperatori();
         }
 
+        /// <summary>
+        /// Ottiene tutti i record della tabella Imperatori. Usa il metodo <see cref="Database.ReadDb"/> per ottenere i record
+        /// </summary>
+        /// <returns> Una <see cref="List{T}"/> di record della tabella Imperatori </returns>
         public List<Entity> GetRecords()
         {
             List<Entity> records = [];
@@ -31,54 +35,73 @@ namespace _05_Impero_Romano
             return records;
         }
 
+        /// <summary>
+        /// Crea un record nella tabella Imperatori. Usa il metodo <see cref="Database.UpdateDb"/> per creare il record
+        /// </summary>
+        /// <param name="entity"> Un oggetto di tipo <see cref="Entity"/> </param>
+        /// <returns> <see langword="true"/> se il record è stato creato, <see langword="false"/> altrimenti </returns>
         public bool CreateRecord(Entity entity)
         {
-            var nome = ((Imperatore) entity).Nome.Replace("'", "''");
-            var dinastia = ((Imperatore) entity).Dinastia.Replace("'", "''");
+            var name = ((Imperatore) entity).Nome.Replace("'", "''");
+            var dinasty = ((Imperatore) entity).Dinastia.Replace("'", "''");
             var dob = ((Imperatore) entity).Dob.ToString("yyyy-MM-dd");
             var dod = ((Imperatore) entity).Dod.ToString("yyyy-MM-dd");
-            var assassinio = ((Imperatore) entity).Assassinio ? 1 : 0;
+            var wasAssassinated = ((Imperatore) entity).Assassinio ? 1 : 0;
 
             return db.UpdateDb($"INSERT INTO Imperatori (nome, dinastia, dob, dod, assassinio) " +
                 $"VALUES " +
-                $"('{nome}'," +
-                $" '{dinastia}'," +
+                $"('{name}'," +
+                $" '{dinasty}'," +
                 $" '{dob}'," +
                 $" '{dod}'," +
-                $"  {assassinio});");
+                $"  {wasAssassinated});");
         }
 
+        /// <summary>
+        /// Aggiorna un record nella tabella Imperatori. Usa il metodo <see cref="Database.UpdateDb"/> per aggiornare il record
+        /// </summary>
+        /// <param name="entity"> Un oggetto di tipo <see cref="Entity"/> </param>
+        /// <returns> <see langword="true"/> se il record è stato aggiornato, <see langword="false"/> altrimenti </returns>
         public bool UpdateRecord(Entity entity)
         {
-            var nome = ((Imperatore) entity).Nome.Replace("'", "''");
-            var dinastia = ((Imperatore) entity).Dinastia.Replace("'", "''");
+            var name = ((Imperatore) entity).Nome.Replace("'", "''");
+            var dinasty = ((Imperatore) entity).Dinastia.Replace("'", "''");
             var dob = ((Imperatore) entity).Dob.ToString("yyyy-MM-dd");
             var dod = ((Imperatore) entity).Dod.ToString("yyyy-MM-dd");
-            var assassinio = ((Imperatore) entity).Assassinio ? 1 : 0;
+            var wasAssassinated = ((Imperatore) entity).Assassinio ? 1 : 0;
 
             return db.UpdateDb($"UPDATE Imperatori SET " +
-             $"nome = '{nome}', " +
-             $"dinastia= '{dinastia}', " +
+             $"nome = '{name}', " +
+             $"dinastia= '{dinasty}', " +
              $"dob = '{dob}', " +
              $"dod = '{dod}', " +
-             $"assassinio = {assassinio} " +
+             $"assassinio = {wasAssassinated} " +
              $"WHERE id = {entity.Id};");
         }
 
+        /// <summary>
+        /// Elimina un record dalla tabella Imperatori. Usa il metodo <see cref="Database.UpdateDb"/> per eliminare il record
+        /// </summary>
+        /// <param name="recordId"> Un intero che rappresenta l'id del record da eliminare </param>
+        /// <returns> <see langword="true"/> se il record è stato eliminato, <see langword="false"/> altrimenti </returns>
         public bool DeleteRecord(int recordId)
         {
             return db.UpdateDb($"DELETE FROM Imperatori WHERE id = {recordId};");
         }
 
+        /// <summary>
+        /// Trova un record nella tabella Imperatori. Usa il metodo <see cref="Database.ReadOneDb"/> per trovare il record
+        /// </summary>
+        /// <param name="recordId"> Un intero che rappresenta l'id del record da trovare </param>
+        /// <returns> Un oggetto di tipo <see cref="Entity"/> se il record è stato trovato, <see langword="null"/> altrimenti </returns>
         public Entity? FindRecord(int recordId)
         {
-            var riga = db.ReadOneDb($"SELECT * FROM Imperatori WHERE id = {recordId};");
-
-            if(riga != null)
+            var line = db.ReadOneDb($"SELECT * FROM Imperatori WHERE id = {recordId};");
+            if(line != null)
             {
-                Entity e = new Imperatore();
-                e.TypeSort(riga);
-                return e;
+                Entity record = new Imperatore();
+                record.TypeSort(line);
+                return record;
             }
             return null;
         }

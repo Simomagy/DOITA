@@ -15,6 +15,10 @@ namespace _05_Impero_Romano
             return instance ??= new DAOBattaglie();
         }
 
+        /// <summary>
+        /// Ottiene tutti i record della tabella Battaglie. Usa il metodo <see cref="Database.ReadDb"/> per ottenere i record
+        /// </summary>
+        /// <returns> Una <see cref="List{T}"/> di record della tabella Battaglie </returns>
         public List<Entity> GetRecords()
         {
             List<Entity> records = [];
@@ -31,52 +35,72 @@ namespace _05_Impero_Romano
             return records;
         }
 
+        /// <summary>
+        /// Crea un record nella tabella Battaglie. Usa il metodo <see cref="Database.UpdateDb"/> per creare il record
+        /// </summary>
+        /// <param name="entity"> Un oggetto di tipo <see cref="Entity"/> </param>
+        /// <returns> <see langword="true"/> se il record è stato creato, <see langword="false"/> altrimenti </returns>
         public bool CreateRecord(Entity entity)
         {
-            var nemico = ((Battaglia) entity).Nemico.Replace("'", "''");
-            var dataBattaglia = ((Battaglia) entity).Data_battaglia.ToString("yyyy-MM-dd");
-            var vincitore = ((Battaglia) entity).Vincitore ? 1 : 0;
-            var luogo = ((Battaglia) entity).Luogo.Replace("'", "''");
-            var idImperatore = ((Battaglia) entity).Imperatore?.Id ?? 0;
+            var enemy = ((Battaglia) entity).Nemico.Replace("'", "''");
+            var battleDate = ((Battaglia) entity).Data_battaglia.ToString("yyyy-MM-dd");
+            var winner = ((Battaglia) entity).Vincitore ? 1 : 0;
+            var location = ((Battaglia) entity).Luogo.Replace("'", "''");
+            var emperorId = ((Battaglia) entity).Imperatore?.Id ?? 0;
 
             return db.UpdateDb($"INSERT INTO Battaglie (nemico, data_battaglia, vincitore, luogo, idimperatore) " +
                 $"VALUES " +
-                $"('{nemico}'," +
-                $" '{dataBattaglia}'," +
-                $"  {vincitore}," +
-                $" '{luogo}'," +
-                $"  {idImperatore});");
+                $"('{enemy}'," +
+                $" '{battleDate}'," +
+                $"  {winner}," +
+                $" '{location}'," +
+                $"  {emperorId});");
         }
 
+        /// <summary>
+        /// Aggiorna un record nella tabella Battaglie. Usa il metodo <see cref="Database.UpdateDb"/> per aggiornare il record
+        /// </summary>
+        /// <param name="entity"> Un oggetto di tipo <see cref="Entity"/> </param>
+        /// <returns> <see langword="true"/> se il record è stato aggiornato, <see langword="false"/> altrimenti </returns>
         public bool UpdateRecord(Entity entity)
         {
-            var nemico = ((Battaglia) entity).Nemico.Replace("'", "''");
-            var dataBattaglia = ((Battaglia) entity).Data_battaglia.ToString("yyyy-MM-dd");
-            var vincitore = ((Battaglia) entity).Vincitore ? 1 : 0;
-            var luogo = ((Battaglia) entity).Luogo.Replace("'", "''");
-            var idImperatore = ((Battaglia) entity).Imperatore?.Id ?? 0;
+            var enemy = ((Battaglia) entity).Nemico.Replace("'", "''");
+            var battleDate = ((Battaglia) entity).Data_battaglia.ToString("yyyy-MM-dd");
+            var winner = ((Battaglia) entity).Vincitore ? 1 : 0;
+            var location = ((Battaglia) entity).Luogo.Replace("'", "''");
+            var emperorId = ((Battaglia) entity).Imperatore?.Id ?? 0;
 
             return db.UpdateDb($"UPDATE Battaglie SET " +
-             $"nemico = '{nemico}', " +
-             $"data_battaglia = '{dataBattaglia}', " +
-             $"vincitore = {vincitore}, " +
-             $"luogo = '{luogo}', " +
-             $"idimperatore = {idImperatore} " +
+             $"nemico = '{enemy}', " +
+             $"data_battaglia = '{battleDate}', " +
+             $"vincitore = {winner}, " +
+             $"luogo = '{location}', " +
+             $"idimperatore = {emperorId} " +
              $"WHERE id = {entity.Id};");
         }
 
+        /// <summary>
+        /// Elimina un record nella tabella Battaglie. Usa il metodo <see cref="Database.UpdateDb"/> per eliminare il record
+        /// </summary>
+        /// <param name="recordId"> L'id del record da eliminare </param>
+        /// <returns> <see langword="true"/> se il record è stato eliminato, <see langword="false"/> altrimenti </returns>
         public bool DeleteRecord(int recordId)
         {
             return db.UpdateDb($"DELETE FROM Battaglie WHERE id = {recordId};");
         }
 
+        /// <summary>
+        /// Trova un record nella tabella Battaglie. Usa il metodo <see cref="Database.ReadOneDb"/> per trovare il record
+        /// </summary>
+        /// <param name="recordId"> L'id del record da trovare </param>
+        /// <returns> Un oggetto di tipo <see cref="Entity"/> se il record è stato trovato, <see langword="null"/> altrimenti </returns>
         public Entity? FindRecord(int recordId)
         {
-            var riga = db.ReadOneDb($"SELECT * FROM Battaglie WHERE id = {recordId};");
-            if(riga != null)
+            var line = db.ReadOneDb($"SELECT * FROM Battaglie WHERE id = {recordId};");
+            if(line != null)
             {
                 Battaglia record = new();
-                record.TypeSort(riga);
+                record.TypeSort(line);
                 return record;
             }
             return null;

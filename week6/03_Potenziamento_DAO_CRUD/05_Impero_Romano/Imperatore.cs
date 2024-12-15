@@ -10,6 +10,10 @@ namespace _05_Impero_Romano
         public DateTime Dod { get; set; }
         public bool Assassinio { get; set; }
 
+        /// <summary>
+        /// Override del metodo ToString per la classe Imperatore. <br/> Aggiunge le proprietà specifiche della classe Imperatore al metodo <see cref="Entity.ToString"/>
+        /// </summary>
+        /// <returns> Una <see langword="string"/> con le proprietà della classe <see cref="Imperatore"/> </returns>
         public override string ToString()
         {
             return base.ToString() +
