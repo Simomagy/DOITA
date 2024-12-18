@@ -64,24 +64,24 @@
 using _04_Utility;
 using _05_Impero_Romano;
 
-//foreach(Entity record in DAOImperatori.GetInstance().GetRecords())
-//{
-//    Imperatore imperatore = (Imperatore) record;
-//    Console.WriteLine($"Imperatore: {imperatore.Nome}");
-//    bool found = false;
-//    foreach(Entity battaglia in DAOBattaglie.GetInstance().GetRecords())
-//    {
-//        Battaglia batt = (Battaglia) battaglia;
-//        if(batt.Imperatore?.Id == imperatore.Id)
-//        {
-//            Console.WriteLine($"Nemico: {batt.Nemico}");
-//            found = true;
-//        }
-//    }
-//    if(!found)
-//        Console.WriteLine("Non ha sconfitto nessuno");
-//    Console.WriteLine("--------------------------------------------------");
-//}
+foreach(Entity record in DAOImperatori.GetInstance().GetRecords())
+{
+    Imperatore imperatore = (Imperatore) record;
+    Console.WriteLine($"Imperatore: {imperatore.Nome}");
+    bool found = false;
+    foreach(Entity battaglia in DAOBattaglie.GetInstance().GetRecords())
+    {
+        Battaglia batt = (Battaglia) battaglia;
+        if(batt.Imperatore?.Id == imperatore.Id)
+        {
+            Console.WriteLine($"Nemico: {batt.Nemico}");
+            found = true;
+        }
+    }
+    if(!found)
+        Console.WriteLine("Non ha sconfitto nessuno");
+    Console.WriteLine("--------------------------------------------------");
+}
 
 // Voglio vedere per ogni dinastia quanti imperatori ci sono stati e quali erano i loro nomi
 //Dictionary<string, List<string>> dinastie = new();
