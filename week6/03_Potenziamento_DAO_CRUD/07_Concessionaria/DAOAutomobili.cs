@@ -10,10 +10,10 @@ namespace _07_Concessionaria
         {
             db = new Database("Concessionaria");
         }
-        private static DAOAutomobili? instance = null;
+        private static DAOAutomobili? _instance = null;
         public static DAOAutomobili GetInstance()
         {
-            return instance ??= new DAOAutomobili();
+            return _instance ??= new DAOAutomobili();
         }
     }
 }
